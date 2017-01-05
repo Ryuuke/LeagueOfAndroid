@@ -1,0 +1,3 @@
+include ':android-app', ':core-lib'
+project(':android-app').projectDir = new File('app')
+project(':core-lib').projectDir = new File('core-lib')

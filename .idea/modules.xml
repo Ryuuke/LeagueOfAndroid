@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/LeagueOfAndroid.iml" filepath="$PROJECT_DIR$/LeagueOfAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/android-app.iml" filepath="$PROJECT_DIR$/app/android-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core-lib/core-lib.iml" filepath="$PROJECT_DIR$/core-lib/core-lib.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,26 @@
+#
+# generated on 2017/01/05 11:33:08
+#
+# --table-start--
+dataClass=com.home.yassine.leagueofandroid.core.models.Champion
+tableName=champions
+# --table-fields-start--
+# --field-start--
+fieldName=id
+id=true
+# --field-end--
+# --field-start--
+fieldName=name
+# --field-end--
+# --field-start--
+fieldName=title
+# --field-end--
+# --field-start--
+fieldName=key
+# --field-end--
+# --field-start--
+fieldName=date
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

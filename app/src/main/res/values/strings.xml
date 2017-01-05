@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LeagueOfAndroid</string>
+    <string name="nom_du_champion">Nom du champion</string>
+    <string name="no_champion_found">No champion found.</string>
+    <string name="error_occurred">An error has occurred, please retry ...</string>
+    <string name="invalid_champion_name">Error, invalid champion name</string>
+    <string name="loading_champion_data">Loading champion\'s data ...</string>
+    <string name="champion_s_image">champion\'s image</string>
+</resources>
