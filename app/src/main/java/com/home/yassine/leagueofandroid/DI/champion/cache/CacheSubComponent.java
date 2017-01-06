@@ -1,4 +1,4 @@
-package com.home.yassine.leagueofandroid.DI.champion.Cache;
+package com.home.yassine.leagueofandroid.DI.champion.cache;
 
 import com.home.yassine.leagueofandroid.fragments.CacheFragment;
 import com.home.yassine.leagueofandroid.core.champion.cache.Cache;
