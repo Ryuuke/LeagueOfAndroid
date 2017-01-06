@@ -1,8 +1,7 @@
-package com.home.yassine.leagueofandroid.DI.Champion.Cache;
+package com.home.yassine.leagueofandroid.DI.champion.Cache;
 
 import com.home.yassine.leagueofandroid.fragments.CacheFragment;
 import com.home.yassine.leagueofandroid.core.champion.cache.Cache;
-import com.home.yassine.leagueofandroid.core.champion.cache.CacheModule;
 
 import dagger.Subcomponent;
 

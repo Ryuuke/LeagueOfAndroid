@@ -1,4 +1,4 @@
-package com.home.yassine.leagueofandroid.DI.Champion.Search;
+package com.home.yassine.leagueofandroid.DI.champion.Search;
 
 import com.home.yassine.leagueofandroid.fragments.SearchFragment;
 import com.home.yassine.leagueofandroid.core.champion.search.Search;

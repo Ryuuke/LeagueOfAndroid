@@ -1,4 +1,4 @@
-package com.home.yassine.leagueofandroid.DI.Champion.Cache;
+package com.home.yassine.leagueofandroid.DI.champion.Cache;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;

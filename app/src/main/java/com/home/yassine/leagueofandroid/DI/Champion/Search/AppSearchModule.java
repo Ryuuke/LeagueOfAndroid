@@ -1,4 +1,4 @@
-package com.home.yassine.leagueofandroid.DI.Champion.Search;
+package com.home.yassine.leagueofandroid.DI.champion.Search;
 
 import android.content.Context;
 
