@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.home.yassine.leagueofandroid.DI.ApplicationComponent;
-import com.home.yassine.leagueofandroid.DI.champion.Cache.AppCacheModule;
+import com.home.yassine.leagueofandroid.DI.champion.cache.AppCacheModule;
 import com.home.yassine.leagueofandroid.adapters.ChampionsRecyclerViwAdapter;
 import com.home.yassine.leagueofandroid.base.BaseFragment;
 import com.home.yassine.leagueofandroid.core.base.BaseView;

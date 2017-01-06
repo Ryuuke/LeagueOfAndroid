@@ -11,7 +11,7 @@ import android.widget.AutoCompleteTextView;
 
 import com.home.yassine.leagueofandroid.base.BaseFragment;
 import com.home.yassine.leagueofandroid.DI.ApplicationComponent;
-import com.home.yassine.leagueofandroid.DI.champion.Search.AppSearchModule;
+import com.home.yassine.leagueofandroid.DI.champion.search.AppSearchModule;
 import com.home.yassine.leagueofandroid.core.base.BaseView;
 import com.home.yassine.leagueofandroid.core.champion.search.SearchPresenter;
 import com.home.yassine.leagueofandroid.core.champion.search.SearchView;
