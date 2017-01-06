@@ -48,7 +48,9 @@ public class CacheFragment extends BaseFragment implements CacheView {
     Context context;
     @Inject
     CacheListener listener;
-    GridLayoutManager gridLayoutManager;
+    @Inject
+    LinearLayoutManager linearLayout;
+
     @BindView(R.id.list)
     RecyclerView recyclerView;
 
@@ -58,8 +60,7 @@ public class CacheFragment extends BaseFragment implements CacheView {
 
         View view = inflater.inflate(R.layout.cache_frag, container, false);
         ButterKnife.bind(this, view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setLayoutManager(linearLayout);
         return view;
     }
 

@@ -1,6 +1,7 @@
 package com.home.yassine.leagueofandroid.DI.Champion.Cache;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
 
 import com.home.yassine.leagueofandroid.core.champion.cache.Cache;
 import com.home.yassine.leagueofandroid.core.champion.cache.CacheModule;
@@ -19,11 +20,13 @@ import dagger.Provides;
 @Module
 public class AppCacheModule extends CacheModule {
 
-    CacheFragment.CacheListener listener;
+    private CacheFragment.CacheListener listener;
+    private Context context;
 
     public AppCacheModule(CacheView view, Context context) {
         super(view);
 
+        this.context = context;
         listener = (CacheFragment.CacheListener) context;
 
         if (listener == null)
@@ -34,5 +37,11 @@ public class AppCacheModule extends CacheModule {
     @Cache
     public CacheFragment.CacheListener provideCacheListener() {
         return listener;
+    }
+
+    @Provides
+    @Cache
+    public LinearLayoutManager provideLinearLayoutManager() {
+        return new LinearLayoutManager(this.context);
     }
 }
