@@ -2,6 +2,7 @@ package com.home.yassine.leagueofandroid.DI.champion.cache;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 
 import com.home.yassine.leagueofandroid.core.champion.cache.Cache;
 import com.home.yassine.leagueofandroid.core.champion.cache.CacheModule;
@@ -41,7 +42,7 @@ public class AppCacheModule extends CacheModule {
 
     @Provides
     @Cache
-    public LinearLayoutManager provideLinearLayoutManager() {
+    public RecyclerView.LayoutManager provideLinearLayoutManager() {
         return new LinearLayoutManager(this.context);
     }
 }

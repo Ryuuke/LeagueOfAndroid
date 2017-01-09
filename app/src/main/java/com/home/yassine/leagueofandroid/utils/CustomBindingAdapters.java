@@ -3,6 +3,7 @@ package com.home.yassine.leagueofandroid.utils;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
+import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 
 import yassine.home.com.leagueofandroid.R;
@@ -17,7 +18,8 @@ public class CustomBindingAdapters {
     public static void loadImage(ImageView imageView, String url) {
         if (url == null) {
             imageView.setImageResource(R.drawable.default_image);
-        } else {
+        }
+        else {
             Picasso.with(imageView.getContext())
                     .load(url)
                     .error(R.drawable.default_image)

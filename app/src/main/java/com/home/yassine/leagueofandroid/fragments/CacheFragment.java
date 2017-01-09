@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +22,7 @@ import com.home.yassine.leagueofandroid.core.models.Champion;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,7 +45,10 @@ public class CacheFragment extends BaseFragment implements CacheView {
     @Inject
     CacheListener listener;
     @Inject
-    LinearLayoutManager linearLayout;
+    RecyclerView.LayoutManager layoutManager;
+    @Inject
+    @Named("listSize")
+    int listSize;
 
     @BindView(R.id.list)
     RecyclerView recyclerView;
@@ -56,7 +59,8 @@ public class CacheFragment extends BaseFragment implements CacheView {
 
         View view = inflater.inflate(R.layout.cache_frag, container, false);
         ButterKnife.bind(this, view);
-        recyclerView.setLayoutManager(linearLayout);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemViewCacheSize(Math.min(listSize, 15));
         return view;
     }
 
@@ -94,7 +98,7 @@ public class CacheFragment extends BaseFragment implements CacheView {
 
     @Override
     public void refreshViewData() {
-        cachePresenter.loadChampionsData((long) 10);
+        cachePresenter.loadChampionsData((long) listSize);
     }
 
     @Override

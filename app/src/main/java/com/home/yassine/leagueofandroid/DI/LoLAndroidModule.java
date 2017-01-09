@@ -1,8 +1,6 @@
 package com.home.yassine.leagueofandroid.DI;
 
 import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 
 import com.home.yassine.leagueofandroid.utils.AppConstants;
 import com.home.yassine.leagueofandroid.utils.AppSchedulerProvider;
@@ -36,7 +34,7 @@ public class LoLAndroidModule {
     @Singleton
     @Named("networkTimeout")
     int provideNetworkTimeoutInSeconds() {
-        return AppConstants.NETWORK_CONNECTION_TIMEOUT;
+        return AppConstants.NETWORK_CONNECTION_TIMEOUT_SEC;
     }
 
     @Provides
@@ -55,21 +53,28 @@ public class LoLAndroidModule {
     @Singleton
     @Named("cacheSize")
     long provideCacheSize() {
-        return AppConstants.CACHE_SIZE;
+        return AppConstants.CACHE_SIZE_BYTES;
     }
 
     @Provides
     @Singleton
     @Named("cacheMaxAge")
     int provideCacheMaxAgeMinutes() {
-        return AppConstants.CACHE_MAX_AGE;
+        return AppConstants.CACHE_MAX_AGE_MIN;
     }
 
     @Provides
     @Singleton
     @Named("cacheMaxStale")
     int provideCacheMaxStaleDays() {
-        return AppConstants.CACHE_MAX_STALE;
+        return AppConstants.CACHE_MAX_STALE_DAY;
+    }
+
+    @Provides
+    @Singleton
+    @Named("listSize")
+    int provideListSize() {
+        return AppConstants.CHAMPION_LIST_MAX_SIZE;
     }
 
     @Provides

@@ -10,7 +10,9 @@ import java.sql.SQLException;
 
 import javax.inject.Inject;
 
+import rx.Subscription;
 import rx.exceptions.Exceptions;
+import rx.subscriptions.Subscriptions;
 
 /**
  * Created by Yassine on 02/01/2017.
@@ -27,6 +29,7 @@ public class SearchPresenterImpl implements SearchPresenter {
     SearchInteractor searchInteractor;
 
     private SchedulerProvider scheduler;
+    private Subscription subscription = Subscriptions.empty();
 
 
     @Inject
@@ -44,14 +47,10 @@ public class SearchPresenterImpl implements SearchPresenter {
         if (view == null)
             return;
 
-        if (!isConnected) {
-            view.showOfflineMessage();
-            return;
-        }
 
         view.showProgress();
 
-        searchInteractor.searchChampions()
+        subscription = searchInteractor.searchChampions()
                 .map(ChampionResponse::getChampions)
                 .flatMapIterable(champions -> champions)
                 .filter(champion -> champion.getKey().toLowerCase().equals(name.toLowerCase()))
@@ -79,12 +78,20 @@ public class SearchPresenterImpl implements SearchPresenter {
                     view.hideProgress();
                     view.addChampion(champion);
 
+                    if (!isConnected) {
+                        view.showOfflineMessage();
+                    }
+
                 }, throwable -> {
 
                     if (view == null)
                         return;
 
                     view.hideProgress();
+
+                    if (!isConnected) {
+                        view.showOfflineMessage();
+                    }
 
                     if (throwable instanceof ChampionNotFoundException) {
                         view.showQueryNoResult();
@@ -102,7 +109,12 @@ public class SearchPresenterImpl implements SearchPresenter {
 
     @Override
     public void unbind() {
+
+        if (!subscription.isUnsubscribed())
+            subscription.unsubscribe();
+
         searchInteractor.unbind();
         this.view = null;
+        searchInteractor = null;
     }
 }
