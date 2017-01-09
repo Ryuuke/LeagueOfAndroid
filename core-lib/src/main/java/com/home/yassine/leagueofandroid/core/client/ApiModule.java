@@ -23,7 +23,7 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    public LoLApi provideMarvelApiService(Retrofit retrofit) {
+    public LoLApi provideLolApiService(Retrofit retrofit) {
         return retrofit.create(LoLApi.class);
     }
 
